@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "plasson-361007",
+  "private_key_id": "145d619dcb729a3e43c04549b07ba1003de9aab4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCvpZD0XANtYODB\nPGES/x/snCf5hJOhrI0d8jlsZ/o1oriWPGbE20izdlY62CblPgQjV5BhJXnR3Y09\nFLgkrAYuW2xuDBNsEJpq1BwKovM9X7A20W/Z7W5KX1dhILk+cNGctmW6QjmaLmh/\nsrU5VSc4iN/L9/lpJPbj/mkx9OfBnSBb7JncfhlFZ4+LCzaOsGEW7fEuXvh4BsxR\nsH2dXH0cQgaXixnNmtlEwMpIlvQpoIFavVC/65v36vhWiNRid4x/UyMrR5M2TbcC\n/FAnoz+yYCvWuVVdFSeI5ttQQpY97FTjSySzKg+qFA4BQWKEgcfoV6giH7HuSnQx\nDcrZQ0tNAgMBAAECggEAG0bhc2lEqPxF+wxG4P3YtdRsSs4BZTaYNaHTtBeTnje2\nZbJcnU6WhDQo4PuHUstmNhzXkZaRy/sVf3pTvHIwhYtyE8bxTzNm35cwAaDbmFjf\nUywELDo4ifkzZyR/UAiSLL2Qn7PAIUb6uHYGubAVJqzu4EySoXb5ll+Ac58eTI05\nV9n0AIclnCje1oH8Qg4h18r7+b9X8Ft2/hPbjWmnGiZ77hme4oFt77LAv3+i3QVm\nIRIcf9xarh3L7Bm2G4NusGZosuFcciBOpmmTC4Ox5yQhNaObfem+WfUF+9w4T3k7\nR6XWYMIj2Uzx7qVM8h1ncV47BEr/bA+8FekyDw77KwKBgQDt/EaW2v8JL6Sx1ZVV\nHZ+GdZ6X/yTgDur6XVWZLVhVSiv/3UAc5n3xnUIK5fqqVARnDrPVMqm3K33yo7nZ\nuiPLxBmqnJKvGCRorGtNKztP1dNkvPrw4YzMMjIHs4s17AEOX/03X69oggBB6cK4\nuVMuwKM/LIYBdXcuAuc7ZCDlEwKBgQC88UeqIFfobDoYBIwvZDPbk0QcTp+CelqU\n+zaRP4Cj1R1oJStB0f0WT5QqzAgmc7feUbc3XH0HVcb7nU+8G43wwO6PrchDgBPh\nfkpxzC4/2pZNVpHN+dXMP3FHPvBYPaglmkEJBIjJWrEAO5WQMIRLfJsopCcigQV6\nFLadiYH6HwKBgQDApRWTKkWG7x03o3hVxTwMQQwXaD82bH0EHCedblpx+C+z2Cr8\n+gv7WNxMLCyEUqyZrAogy/kcQEWc87IPMKGnYd+Q/1uyBy352ZCmkBdcIfAUPPI5\nqasq5HshRtKq3JdiRouYlolMZOfGc27fz40pbGD5U5ZKegb2pPz/U6dZJwKBgEbj\nzDyjh/gXazCJvEMnuGFA/sQUJ7rfx06wdofGqLBPjIn/sBww+mE9mFz6UnCC6FDM\nng5ycCKpZ1AOdNUiDX5wFNHppQLWch8fsDTEI/InRE9eFLSQcUwB3bGahrjE4WrC\nVnZYsi3CDjkFIheIbIqaBOkZtek3OWPVk7LF3fOHAoGBAOVdKIqamq3cJk6BxUsm\nQZPukJGIuO6OTCCrOICmsfpPttnpQTf9V/8iLKMNsmcTu2V4vXw3Dtjv28hwd3ct\nvqxX7l90+hcefBm7FtoVEpsMVHHhAqz4GJbHKBU4W3xwDKpbHfVXE02c70ghfRE5\n+/8EBYuLwH8awdk+Grkt3o2p\n-----END PRIVATE KEY-----\n",
+  "client_email": "plasson@plasson-361007.iam.gserviceaccount.com",
+  "client_id": "118155369626050031793",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/plasson%40plasson-361007.iam.gserviceaccount.com"
+}

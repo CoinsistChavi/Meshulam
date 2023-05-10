@@ -1,0 +1,195 @@
+body {
+    font-family: "Rubik" !important;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd !important;
+    direction: rtl;
+    margin-bottom: 50px !important;
+}
+#bodyAll {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+h3{
+    font-size: 22px !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #d80018 !important;
+}
+  .content {
+    position:relative;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+form{
+    margin-bottom: 20px;
+}
+#login .container #login-row #login-column #login-box { 
+    max-width: 600px;
+    height: 180px;
+    border: 1px solid #cacaca;
+    background-color: #F6FAFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .container #login-row #login-column #login-box #login-form {
+    padding: 0 5px;
+} 
+.dropdown{
+    margin-bottom: 10px !important;
+}
+#submitbtn, #submitbtn2{
+    margin-top: 10px;
+    background-color: #1B81C4;
+}
+.text-info{
+    color: #1B81C4 !important;
+}
+.storeopen{
+    margin: auto;
+    text-align: center;
+}
+#logo{
+    max-width: 100px;
+    height:30px;
+    padding-top: 5px;
+}
+#phone-icon{
+    max-width: 50px;
+}
+
+.loader{
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+.alert{
+    direction: rtl;
+    padding:10px !important; 
+}
+.form-control{
+    margin-bottom: 10px;
+}
+hr{
+    
+    margin-top: 0.2rem !important;
+}
+.radio-label{
+    margin-left:20px;
+}
+.form-check{
+    margin-bottom: 10px !important;
+    /*margin-top: 10px !important;*/
+}
+#ticketID{
+    color:#0052cc;
+    font-weight: bold;
+}
+.ticket-details{
+    border:none;
+    overflow: hidden;
+    color:#757575;
+    background-color: #fff !important;
+}
+input:disabled {
+    background-color: none !important;
+}
+select{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: right;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    direction:rtl;
+    width: 100%;
+}
+.textareaTicket{
+    min-height: 39px;
+    width: 100%;
+    border: none;
+    color:#757575;
+    background-color: #fff !important;
+}
+.form-group{
+    margin-bottom: 0 !important;
+}
+.form-group-tickets{
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 5px;
+}
+#creatTicketForm{
+    direction: rtl;
+}
+.authClass{
+    color:#1B81C4;
+    font-size: 10px;
+}
+/*************** select2 **************/
+.js-example-basic-single{
+    direction: rtl !important;
+    text-align: right !important;
+}
+.select2-search__field{
+    direction: rtl !important;
+    text-align: right !important;
+}
+.select2-container{
+    z-index: 99999 !important;
+}
+.dropdown, .dropdown-wrapper, .select2-results{
+    direction: rtl !important;
+    text-align: right !important;
+}
+.select2-selection__arrow{
+    left : 1px !important;
+}
+.select2-results{
+    max-height: 400px;
+}
+.select2{
+    width:100% !important;
+}
+.borderClass{
+    border: 1px solid #ff0000 !important;
+  }
+.select2-container--default .select2-selection--singl{
+    border: 1px solid #ff0000 !important;
+}
+/****************datepicker*********************/
+
+#ui-datepicker-div .ui-datepicker-current {
+    display: none;
+}
+/*************************************************/
