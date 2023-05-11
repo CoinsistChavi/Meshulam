@@ -1,5 +1,6 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import logger from '../../logger/index.js'
+import fs from 'fs'
  
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
@@ -28,7 +29,6 @@ const getData = async () => {
     const sheet = await AccessSpreadSheet()
     const rows = await sheet.getRows(); 
     rows.forEach(column => { 
-        //console.log("column: "+column)
         clientArray.push({Subject: column["נושא"],SecSubject: column["תת נושא"],Tag: column["תיוג"]})
     });
     setTimeout(getData, 26000000);

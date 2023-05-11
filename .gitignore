@@ -1,4 +1,6 @@
 readme.txt
+data/
+data/*
 
 # Logs
 logs

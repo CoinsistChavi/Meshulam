@@ -1,14 +1,17 @@
 import express from 'express'
 import logger from '../logger/index.js'
-import axios from 'axios'
 import fs from 'fs'
+import { addTags } from "../GlassixApiFunctions.js"
 
 const router = express.Router()
+
 const template = fs.readFileSync(`./static/index.html`, 'utf-8')
 
-export default router.get('/Subjects', async(req, res) => {
+router.get('/MagentoInfo', async (req, res) => {
     try {
-        console.log("got here");
+        logger.info("MagentoInfo-Iframe" + req.query.ticketId)
+        //const ticketId = req.query.ticketId
+        //fs.writeFileSync('./static/subjectsArr.json', JSON.stringify(clientArray));
         const data = clientArray
         let companyNameArray = []
         let CompanyData = "<option value='0'></option>"
@@ -21,8 +24,21 @@ export default router.get('/Subjects', async(req, res) => {
         });
         let output = template.replace('{%SUBJECT%}', CompanyData)
         return res.end(output)
-    } catch (error) {
-        logger.error("Subjects Error: " +error)
-        return res.status(400).json({ success: false });
+    } catch (err) {
+        logger.error("MagentoInfo-Iframe error-" + err)
+        return res.status(200).send("לקוח לא נמצא במג'נטו")
     }
 })
+
+router.post('/AddTags', async (req, res) => {
+    try {
+        logger.info("AddTags" + req.body.ticketId)
+        await addTags(req.body.ticketId,req.body.tag)
+        return res.status(200).json({success: true})
+    } catch (err) {
+        logger.error("MagentoInfo-Iframe error-" + err)
+        return res.status(200).json({success: false})
+    }
+})
+
+export default router

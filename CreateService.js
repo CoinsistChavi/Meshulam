@@ -2,9 +2,9 @@ import {Service} from 'node-windows'
 
 // Create a new service object
 var svc = new Service({
-  name:'[Node] Meshulam',
-  description: 'Meshulam - googleSheets',
-  script: 'C:\\NodeServices\\NodeMainRouter\\Services\\Meshulam\\server.js',
+  name:'[Node] TerminalXMagento',
+  description: 'TerminalX - Magento',
+  script: 'C:\\NodeServices\\NodeMainRouter\\Services\\TerminalXMagento\\server.js',
   nodeOptions: [
     '--harmony',
     '--max_old_space_size=4096'

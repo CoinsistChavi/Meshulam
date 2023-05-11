@@ -1,1 +1,2 @@
-# Meshulam
+# TerminalXMagento
+TerminalX - Magento
