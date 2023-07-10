@@ -3,8 +3,9 @@ import logger from './logger/index.js'
 
 axios.defaults.timeout = 15000
 
-export const GetGlassixToken = async () => {
-    const renewTokenPeriod = 10700000
+const renewTokenPeriod = 10700000
+
+export const GetGlassixToken = async () => {   
     try {
       let res = await axios({
         method: 'post',
@@ -83,4 +84,88 @@ export const GetGlassixToken = async () => {
       return null
     }
   }
-  export { getGlassixTicket, addTags}
+  const GetGlassixTokenUser = async (username) => {
+    try {
+      let res = await axios({
+        method: 'post',
+        url: 'https://app.glassix.com/api/v1.2/token/get',
+        headers: { 'Content-type': 'application/json' },
+        data: {
+          apiKey: process.env.APIKEY,
+          apiSecret: process.env.APISECRET,
+          userName: username
+        },
+      })
+        logger.info('Glassix token User renew: '+username)
+        tokenMap.set(username, res.data.access_token)
+        setTimeout(() => {tokenMap.delete(username)}, renewTokenPeriod);
+        return res.data.access_token
+    } catch (err) {
+      logger.error('Error GetGlassixTokenUser: ' + err)
+      return null
+    }
+  }
+
+  const createTicketUser = async (userEmail,data) => {
+    try {
+      logger.info('createTicket')
+      const accessToken = tokenMap.get(userEmail)
+      const accessTokenUser = accessToken ? accessToken : await GetGlassixTokenUser(userEmail)
+      if(accessTokenUser==null)
+          return null
+      //console.log("createTicket: data - "+ JSON.stringify(data));
+      const res = {
+        method: 'POST',
+        url: `https://app.glassix.com/api/v1.2/tickets/create`,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessTokenUser}`
+        },
+        data: data
+      }
+      const result = await axios(res)
+      return result.data
+    } catch (error) {
+      logger.error("Error createTicket: "+ error)
+      return null
+    }
+  }
+
+  const addNotes = async (ticketId, text) => {
+    try {
+    logger.info("addNotes "+ticketId)
+    const options = {
+      method: 'POST',
+      url: `https://app.glassix.com/api/v1.2/tickets/addnote/${ticketId}`,
+      headers: {
+        Accept: 'application/json', 'Content-Type': 'application/json',
+        Authorization: `Bearer ${globalAccessToken}`
+      },
+      data: {text: `${text}`}
+    };
+      const res = await axios(options)
+    } catch (error) {
+      logger.error(`add Notes Error: `+ error)
+    }
+  }
+
+  const audiolink = async (ticketId, audioUri) => {
+    try {
+    logger.info("audiolink "+ticketId)
+    const options = {
+      method: 'POST',
+      url: `https://app.glassix.com/api/v1.2/phonecalls/audiolink/${ticketId}`,
+      headers: {
+        Accept: 'application/json', 'Content-Type': 'application/json',
+        Authorization: `Bearer ${globalAccessToken}`
+      },
+      data: {audioUri: `${audioUri}`}
+    };
+      const res = await axios(options)
+    } catch (error) {
+      logger.error(`audiolink Error: `+ error)
+    }
+  }
+
+  export { getGlassixTicket, addTags, createTicketUser, addNotes, audiolink}

@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import route from './routes/ClientApi.js'
+import routerAspire from './routes/AspireApi.js'
 import dotenv from 'dotenv'
 import { GetGlassixToken } from "./GlassixApiFunctions.js";
 import { getData } from "./controller/googleSheets/getData.js"
@@ -23,8 +24,10 @@ await getData()
 
 fs.writeFileSync("./static/subjectsArr.json", JSON.stringify(clientArray))
 
-app.use('/api', route);
+app.use('/api', route)
+app.use('/aspire', routerAspire)
 
+global.tokenMap = new Map();
 global.globalAccessToken = "";
 await GetGlassixToken();
 

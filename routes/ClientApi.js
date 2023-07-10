@@ -9,7 +9,7 @@ const template = fs.readFileSync(`./static/index.html`, 'utf-8')
 
 router.get('/SubjectsIframe', async (req, res) => {
     try {
-        logger.info("SubjectsIframe" + req.query.ticketId)
+        //logger.info("SubjectsIframe" + req.query.ticketId)
         //const ticketId = req.query.ticketId
         //fs.writeFileSync('./static/subjectsArr.json', JSON.stringify(clientArray));
         const data = clientArray
@@ -26,7 +26,7 @@ router.get('/SubjectsIframe', async (req, res) => {
         return res.end(output)
     } catch (err) {
         logger.error("SubjectsIframe error-" + err)
-        return res.status(200).send("לקוח לא נמצא במג'נטו")
+        return res.status(200).send("שגיאה")
     }
 })
 
@@ -36,7 +36,7 @@ router.post('/AddTags', async (req, res) => {
         await addTags(req.body.ticketId,req.body.tag)
         return res.status(200).json({success: true})
     } catch (err) {
-        logger.error("MagentoInfo-Iframe error-" + err)
+        logger.error("AddTags error-" + err)
         return res.status(200).json({success: false})
     }
 })
