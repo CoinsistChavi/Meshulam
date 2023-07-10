@@ -35,6 +35,7 @@ $(document).ready(function(){
               if(data[k].Subject==SubjectCode){
                 SubjectData += "<option value='"+data[k].Tag+"'>"+data[k].SecSubject+"</option>"
               }
+              
             //}
         });
         $("#SecSubject").empty();
@@ -49,8 +50,9 @@ $(document).ready(function(){
       tag: $("#SecSubject option:selected").val(),
       ticketId: ticketIdVal
     }
+    console.log("tag "+$("#SecSubject option:selected").val());
     $.ajax({
-      url: 'api/AddTags',
+      url: 'AddTags',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/json',

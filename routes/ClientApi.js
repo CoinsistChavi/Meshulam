@@ -7,9 +7,9 @@ const router = express.Router()
 
 const template = fs.readFileSync(`./static/index.html`, 'utf-8')
 
-router.get('/MagentoInfo', async (req, res) => {
+router.get('/SubjectsIframe', async (req, res) => {
     try {
-        logger.info("MagentoInfo-Iframe" + req.query.ticketId)
+        logger.info("SubjectsIframe" + req.query.ticketId)
         //const ticketId = req.query.ticketId
         //fs.writeFileSync('./static/subjectsArr.json', JSON.stringify(clientArray));
         const data = clientArray
@@ -25,7 +25,7 @@ router.get('/MagentoInfo', async (req, res) => {
         let output = template.replace('{%SUBJECT%}', CompanyData)
         return res.end(output)
     } catch (err) {
-        logger.error("MagentoInfo-Iframe error-" + err)
+        logger.error("SubjectsIframe error-" + err)
         return res.status(200).send("לקוח לא נמצא במג'נטו")
     }
 })

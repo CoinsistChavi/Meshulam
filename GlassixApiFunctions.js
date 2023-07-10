@@ -8,7 +8,7 @@ export const GetGlassixToken = async () => {
     try {
       let res = await axios({
         method: 'post',
-        url: 'https://app.glassix.com/api/v1.2/token/get',
+        url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/token/get`,
         headers: { 'Content-type': 'application/json' },
         data: {
           apiKey: process.env.APIKEY,
@@ -31,7 +31,7 @@ export const GetGlassixToken = async () => {
     
       const res = await axios({
         method: 'get',
-        url: `https://app.glassix.com/api/v1.2/tickets/get/${ticketId}`,
+        url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/tickets/get/${ticketId}`,
         headers: { Authorization: `Bearer ${accessToken}` }
       });
       console.log('response getGlassixTicket');
@@ -49,7 +49,7 @@ export const GetGlassixToken = async () => {
       let res
       const options = {
         method: 'GET',
-        url: `https://app.glassix.com/api/v1.2/contacts/get/${contactId}`,
+        url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/contacts/get/${contactId}`,
         headers: {
           Accept: 'application/json', 'Content-Type': 'application/json',
           Authorization: `Bearer ${accessToken}`
@@ -64,22 +64,22 @@ export const GetGlassixToken = async () => {
   }
   const addTags = async (ticketId,tag) => {
     try {
-      logger.info('addTags '+ticketId)
+      logger.info('addTags '+ticketId+", "+tag)
       //console.log("createTicket: data - "+ JSON.stringify(data));
       const res = {
         method: 'POST',
-        url: `https://app.glassix.com/api/v1.2/tickets/addtags${ticketId}`,
+        url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/tickets/addtags/${ticketId}`,
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
           Authorization: `Bearer ${globalAccessToken}`
         },
-        data: `['${tag}']`
+        data: [`${tag}`]
       }
       const result = await axios(res)
       return result.data
     } catch (error) {
-      logger.error("Error addTags: " + error.response?.data?.message || error.message)
+      logger.error("Error addTags: " + error)
       return null
     }
   }
