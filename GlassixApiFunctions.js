@@ -88,7 +88,7 @@ export const GetGlassixToken = async () => {
     try {
       let res = await axios({
         method: 'post',
-        url: 'https://app.glassix.com/api/v1.2/token/get',
+        url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/token/get`,
         headers: { 'Content-type': 'application/json' },
         data: {
           apiKey: process.env.APIKEY,
@@ -116,7 +116,7 @@ export const GetGlassixToken = async () => {
       //console.log("createTicket: data - "+ JSON.stringify(data));
       const res = {
         method: 'POST',
-        url: `https://app.glassix.com/api/v1.2/tickets/create`,
+        url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/tickets/create`,
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ export const GetGlassixToken = async () => {
     logger.info("addNotes "+ticketId)
     const options = {
       method: 'POST',
-      url: `https://app.glassix.com/api/v1.2/tickets/addnote/${ticketId}`,
+      url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/tickets/addnote/${ticketId}`,
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
         Authorization: `Bearer ${globalAccessToken}`
@@ -155,7 +155,7 @@ export const GetGlassixToken = async () => {
     logger.info("audiolink "+ticketId)
     const options = {
       method: 'POST',
-      url: `https://app.glassix.com/api/v1.2/phonecalls/audiolink/${ticketId}`,
+      url: `https://${process.env.SUBDOMAIN}.glassix.com/api/v1.2/phonecalls/audiolink/${ticketId}`,
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
         Authorization: `Bearer ${globalAccessToken}`
